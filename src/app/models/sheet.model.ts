@@ -1,6 +1,6 @@
 export interface Sheet {
-  name: string;
-  platform: string;
-  technology: string;
-  link: string;
+  Date: string;
+  Time: string;
+  FirstName: string;
+  LastName: string;
 }

@@ -8,20 +8,20 @@
   <table class="table table-dark table-striped">
     <thead>
       <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Platform</th>
-        <th scope="col">Technology</th>
-        <th scope="col">Link</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
         <th scope="col"></th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let datum of data; let i = index ">
-        <th scope="row">{{datum.name}}</th>
-        <td>{{datum.platform}}</td>
-        <td>{{datum.technology}}</td>
-        <td><a href={{datum.link}} target="_blank">Link</a></td>
+        <th scope="row">{{datum.Date}}</th>
+        <td>{{datum.Time}}</td>
+        <td>{{datum.FirstName}}</td>
+        <td>{{datum.LastName}}</td>
         <td (click)="editSheet(i)"><button class="btn btn-secondary">Edit</button></td>
 
         <td (click)="deleteSheet(i)"><button class="btn btn-danger">Delete</button></td>
