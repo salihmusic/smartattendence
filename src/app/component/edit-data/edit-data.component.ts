@@ -22,6 +22,7 @@ export class EditDataComponent implements OnInit {
     this.updateSheetForm = this.formBuilder.group({
       Date: ['', Validators.required],
       Time: ['', Validators.required],
+      ID: ['', Validators.required],
       FirstName: ['', Validators.required],
       LastName: ['', Validators.required],
     });
@@ -35,6 +36,7 @@ export class EditDataComponent implements OnInit {
         this.data = res[0];
         this.updateSheetForm.get('Date')?.setValue(this.data.Date);
         this.updateSheetForm.get('Time')?.setValue(this.data.Time);
+        this.updateSheetForm.get('ID')?.setValue(this.data.ID);
         this.updateSheetForm.get('FirstName')?.setValue(this.data.FirstName);
         this.updateSheetForm.get('LastName')?.setValue(this.data.LastName);
       });
@@ -47,11 +49,12 @@ export class EditDataComponent implements OnInit {
 
     const Date = this.updateSheetForm.value.Date;
     const Time = this.updateSheetForm.value.Time;
+    const ID = this.updateSheetForm.value.ID;
     const FirstName = this.updateSheetForm.value.FirstName;
     const LastName = this.updateSheetForm.value.LastName;
 
     this.service
-      .updateSheet(this.id, Date, Time, FirstName, LastName)
+      .updateSheet(this.id, Date, Time,ID, FirstName, LastName)
       .subscribe({
         next: (res) => {
           console.log(res);
