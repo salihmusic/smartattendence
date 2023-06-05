@@ -20,6 +20,7 @@ export class CreateDataComponent implements OnInit {
     this.googleSheetForm = this.formBuilder.group({
       Date: formBuilder.control(''),
       Time: formBuilder.control(''),
+      ID: formBuilder.control(''),
       FirstName: formBuilder.control(''),
       LastName: formBuilder.control(''),
     });
@@ -32,10 +33,11 @@ export class CreateDataComponent implements OnInit {
 
     const Date = this.googleSheetForm.value.Date;
     const Time = this.googleSheetForm.value.Time;
+    const ID= this.googleSheetForm.value.ID;
     const FirstName = this.googleSheetForm.value.FirstName;
     const LastName = this.googleSheetForm.value.LastName;
 
-    this.service.createSheet(Date, Time, FirstName, LastName).subscribe({
+    this.service.createSheet(Date, Time, ID, FirstName, LastName).subscribe({
       next: (res) => {
         console.log(res);
         if (res) {

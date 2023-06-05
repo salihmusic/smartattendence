@@ -13,12 +13,14 @@ export class SheetService {
   createSheet(
     Date: string,
     Time: string,
+    ID:string,
     FirstName: string,
     LastName: string
   ): Observable<Sheet> {
     return this.http.post<Sheet>(`${environment.CONNECTION_URL}`, {
       Date,
       Time,
+      ID,
       FirstName,
       LastName,
     });
@@ -40,12 +42,14 @@ export class SheetService {
     id: number,
     Date: string,
     Time: string,
+    ID: string,
     FirstName: string,
     LastName: string
   ): Observable<Sheet> {
     return this.http.put<Sheet>(`${environment.CONNECTION_URL}/${id}`, {
       Date,
       Time,
+      ID,
       FirstName,
       LastName,
     });
