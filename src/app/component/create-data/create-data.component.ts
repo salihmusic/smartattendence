@@ -18,10 +18,10 @@ export class CreateDataComponent implements OnInit {
     private router: Router
   ) {
     this.googleSheetForm = this.formBuilder.group({
-      name: formBuilder.control(''),
-      platform: formBuilder.control(''),
-      technology: formBuilder.control(''),
-      link: formBuilder.control(''),
+      Date: formBuilder.control(''),
+      Time: formBuilder.control(''),
+      FirstName: formBuilder.control(''),
+      LastName: formBuilder.control(''),
     });
   }
 
@@ -30,12 +30,12 @@ export class CreateDataComponent implements OnInit {
   public onSubmit() {
     console.log(this.googleSheetForm.value);
 
-    const name = this.googleSheetForm.value.name;
-    const platform = this.googleSheetForm.value.platform;
-    const technology = this.googleSheetForm.value.technology;
-    const link = this.googleSheetForm.value.link;
+    const Date = this.googleSheetForm.value.Date;
+    const Time = this.googleSheetForm.value.Time;
+    const FirstName = this.googleSheetForm.value.FirstName;
+    const LastName = this.googleSheetForm.value.LastName;
 
-    this.service.createSheet(name, platform, technology, link).subscribe({
+    this.service.createSheet(Date, Time, FirstName, LastName).subscribe({
       next: (res) => {
         console.log(res);
         if (res) {

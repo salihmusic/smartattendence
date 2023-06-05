@@ -20,10 +20,10 @@ export class EditDataComponent implements OnInit {
     private router: Router
   ) {
     this.updateSheetForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      platform: ['', Validators.required],
-      technology: ['', Validators.required],
-      link: ['', Validators.required],
+      Date: ['', Validators.required],
+      Time: ['', Validators.required],
+      FirstName: ['', Validators.required],
+      LastName: ['', Validators.required],
     });
   }
 
@@ -33,10 +33,10 @@ export class EditDataComponent implements OnInit {
       this.service.getSheetDataById(this.id).subscribe((res: any) => {
         console.log(res[0]);
         this.data = res[0];
-        this.updateSheetForm.get('name')?.setValue(this.data.name);
-        this.updateSheetForm.get('platform')?.setValue(this.data.platform);
-        this.updateSheetForm.get('technology')?.setValue(this.data.technology);
-        this.updateSheetForm.get('link')?.setValue(this.data.link);
+        this.updateSheetForm.get('Date')?.setValue(this.data.Date);
+        this.updateSheetForm.get('Time')?.setValue(this.data.Time);
+        this.updateSheetForm.get('FirstName')?.setValue(this.data.FirstName);
+        this.updateSheetForm.get('LastName')?.setValue(this.data.LastName);
       });
     });
   }
@@ -45,13 +45,13 @@ export class EditDataComponent implements OnInit {
     const { value } = this.updateSheetForm;
     console.log('value', value);
 
-    const name = this.updateSheetForm.value.name;
-    const platform = this.updateSheetForm.value.platform;
-    const technology = this.updateSheetForm.value.technology;
-    const link = this.updateSheetForm.value.link;
+    const Date = this.updateSheetForm.value.Date;
+    const Time = this.updateSheetForm.value.Time;
+    const FirstName = this.updateSheetForm.value.FirstName;
+    const LastName = this.updateSheetForm.value.LastName;
 
     this.service
-      .updateSheet(this.id, name, platform, technology, link)
+      .updateSheet(this.id, Date, Time, FirstName, LastName)
       .subscribe({
         next: (res) => {
           console.log(res);

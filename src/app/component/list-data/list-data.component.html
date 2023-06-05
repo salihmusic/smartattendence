@@ -10,6 +10,7 @@
       <tr>
         <th scope="col">Date</th>
         <th scope="col">Time</th>
+        <th scope="col">ID</th>
         <th scope="col">FirstName</th>
         <th scope="col">LastName</th>
         <th scope="col"></th>
@@ -20,6 +21,7 @@
       <tr *ngFor="let datum of data; let i = index ">
         <th scope="row">{{datum.Date}}</th>
         <td>{{datum.Time}}</td>
+        <td>{{datum.ID}}</td>
         <td>{{datum.FirstName}}</td>
         <td>{{datum.LastName}}</td>
         <td (click)="editSheet(i)"><button class="btn btn-secondary">Edit</button></td>
