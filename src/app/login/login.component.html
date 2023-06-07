@@ -11,11 +11,13 @@
     <form (ngSubmit)="onSubmit()">
       <label for="username">Professor username</label>
       <input type="text" name="username" [(ngModel)]="username">
-
       <label for="password">Password</label>
       <input type="password" name="password" [(ngModel)]="password">
-
       <button type="submit">Login</button>
+
     </form>
+  </div>
+  <div *ngIf="loginFailed" class="error-message">
+    Failed to login. Please check your credentials.
   </div>
 </div>
