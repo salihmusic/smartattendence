@@ -1,9 +1,21 @@
-<form (ngSubmit)="onSubmit()">
-  <label for="username">Username</label>
-  <input type="text" name="username" [(ngModel)]="username">
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid" style="background-image: url('assets/ssst2.jpg'); background-repeat: no-repeat; background-position: center; padding: 50px" ></div>
 
-  <label for="password">Password</label>
-  <input type="password" name="password" [(ngModel)]="password">
 
-  <button type="submit">Login</button>
-</form>
+</nav>
+
+<div class="container">
+  <h1 style="padding-bottom: 5vh">Welcome to SmartAttendance System SSST</h1>
+  <br >
+  <div class="form">
+    <form (ngSubmit)="onSubmit()">
+      <label for="username">Professor username</label>
+      <input type="text" name="username" [(ngModel)]="username">
+
+      <label for="password">Password</label>
+      <input type="password" name="password" [(ngModel)]="password">
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
