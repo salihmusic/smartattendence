@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 
 export class LoginComponent {
-
+  loginFailed = false;
   username: string | undefined;
   password: string | undefined;
 
@@ -19,14 +19,17 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
+
     const isLoggedIn = this.authService.login(this.username, this.password);
 
     if (isLoggedIn) {
       // Redirect to the authenticated page or perform necessary actions
       this.router.navigateByUrl('/list-data');
+
     } else {
       // Display an error message or perform necessary actions
       console.log('Login failed');
+      this.loginFailed=true;
     }
 
 

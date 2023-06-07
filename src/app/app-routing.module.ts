@@ -4,11 +4,15 @@ import { CreateDataComponent } from './component/create-data/create-data.compone
 import { EditDataComponent } from './component/edit-data/edit-data.component';
 import { ListDataComponent } from './component/list-data/list-data.component';
 import {LoginComponent} from "./login/login.component";
+import {AuthGuard} from "./auth-guard.service";
 
 const routes: Routes = [
 
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent},
+
+  { path:'list-data', component:ListDataComponent, canActivate: [AuthGuard],
+  },
 
   {
     path: 'create-data',

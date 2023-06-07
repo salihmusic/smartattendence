@@ -9,6 +9,7 @@ import { CreateDataComponent } from './component/create-data/create-data.compone
 import { EditDataComponent } from './component/edit-data/edit-data.component';
 import { LoginComponent } from './login/login.component';
 
+
 @NgModule({
   declarations: [AppComponent,
     ListDataComponent,
